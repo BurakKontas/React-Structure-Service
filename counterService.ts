@@ -11,20 +11,20 @@ class CounterService implements ICounterService {
         });
     }
 
-    // async getExample(signal: AbortSignal): Promise<any> {
-    //     let response = await this.instance.get(endpoints.COUNTER, { signal });
-    //     return response.data;
-    // }
+    async getExample(): Promise<any> {
+        let response = await this.instance.get(endpoints.TEST_ENDPOINT);
+        return response.data;
+    }
 
-    // async postExample(data: any, signal: AbortSignal): Promise<any> {
-    //     let response = await this.instance.post(endpoints.COUNTER, data, { signal });
-    //     return response.data;
-    // }
+    async postExample(data: any): Promise<any> {
+        let response = await this.instance.post(endpoints.TEST_ENDPOINT, data);
+        return response.data;
+    }
 
 }
 
 export enum endpoints {
-    COUNTER = '/counter'
+    TEST_ENDPOINT = '/test_endpoint'
 }
 
 export default CounterService;
